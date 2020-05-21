@@ -1,22 +1,24 @@
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
+
+
+
+
+
+
 
 
 public class CalcularEdad {
-    public static void main (String args []) throws IOException{
-        BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Año de nacimiento\n");
-        int an =Integer.parseInt(teclado.readLine());
-        System.out.println("Año actual\n");
-        int ac =Integer.parseInt(teclado.readLine());
+    
+    public static void main (String args []){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingresa tu año de nacimiento");
+        int a_ac = scan.nextInt();
+         System.out.println("Ingresa el año actual");
+        int date  = scan.nextInt();
+
+        int edad_user = date - a_ac;
+        System.out.println("Tu edad es:"+edad_user);
         
-        System.out.println("Años recorridos");
-        System.out.println(an);
-        
-        int c=an; while (c<an){ c=c+1; 
-    }
-        System.out.println("ya quedo");
-}
+    } 
 }
