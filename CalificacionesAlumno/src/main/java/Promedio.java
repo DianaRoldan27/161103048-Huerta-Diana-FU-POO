@@ -18,7 +18,5 @@ public class Promedio {
     
     cal_Final=cal1*0.40+cal2*0.40+cal3*0.20;
     System.out.println("Su promedio es:"+cal_Final);
-    
     }   
-
     }
