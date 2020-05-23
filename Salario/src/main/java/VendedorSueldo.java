@@ -2,7 +2,6 @@
 import java.util.Scanner;
 //Un vendedor recibe un sueldo base 3000 mas el 10% de su venta total.
 //Un programa que calcule el sueldo de un vendedor dando su venta total
-
 public class VendedorSueldo {
     public static void main (String args[]){
        float sueldoBase, vuno, vdos ,ventas,comision,total;
