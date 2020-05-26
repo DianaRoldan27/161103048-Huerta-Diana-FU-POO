@@ -1,7 +1,6 @@
 
 import java.util.Scanner;
 
-
 public class HoroscopoZodiacal {
     public static void main(String args[]){
         int diaEntrada, mesEntrada;
@@ -12,7 +11,6 @@ public class HoroscopoZodiacal {
         mesEntrada = Integer.parseInt(Sc.nextLine());
         System.out.println("tu signo es: " + calcularSignoZodiacal(diaEntrada,mesEntrada));
     }
-    
     public static String calcularSignoZodiacal(int dia, int mes) {
         if (mes == 1) {
             if (dia >= 21) {
