@@ -14,7 +14,7 @@ public class AvisosMain {
         aviso1.status = "Vigente";
         aviso1.tipo = "General";
         System.out.println(aviso1.toString());
-        
+        System.out.println("\n");
 
         Avisos aviso2 = new Avisos();
         aviso2.numero = 2;
