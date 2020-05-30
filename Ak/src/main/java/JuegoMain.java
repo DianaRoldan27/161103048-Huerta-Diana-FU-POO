@@ -1,7 +1,9 @@
 
 public class JuegoMain {
     public static void main(String args[]){
-        Ak bronce = new Ak();
+        //CONSTRUCTOR VACIO.
+        
+        Ak bronce = new Ak("bronce",5,65,5,1000,10,20);
         bronce.tipo="bronce";
         bronce.cargador=5;
         bronce.precision=65;

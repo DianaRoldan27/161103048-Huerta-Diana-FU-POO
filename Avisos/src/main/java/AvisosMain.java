@@ -1,8 +1,7 @@
 
-
 public class AvisosMain {
     public static void main(String args[]) {
-        Avisos aviso1 = new Avisos();
+        Avisos aviso1 = new Avisos(1,"","","","","","","","","");
         aviso1.numero = 1;
         aviso1.titulo = "Insumos y bienes muebles de laboratorio disponibles";
         aviso1.nombre = "Eduardo Flores Di­az";
@@ -16,7 +15,7 @@ public class AvisosMain {
         System.out.println(aviso1.toString());
         System.out.println("\n");
 
-        Avisos aviso2 = new Avisos();
+        Avisos aviso2 = new Avisos(2,"","","","","","","","","");
         aviso2.numero = 2;
         aviso2.titulo = "CONFERENCIA DR. COSSARIZZA";
         aviso2.nombre = "Kevin Meza Gonzalez";

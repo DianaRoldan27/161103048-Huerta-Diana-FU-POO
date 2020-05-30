@@ -1,5 +1,6 @@
 //CLASE DE LA PLANTILLA PARA CREAR OBJETOS.
 public class Ak {
+   
     //ATRIBUTOS DATOS O CARACTERISTICAS DEL OBJETO DE MANERA GENERAL.
     
     String tipo;
@@ -8,14 +9,37 @@ public class Ak {
     double velocidadCarga;
     double precio;
     int danio;
+    double velocidadDisparo;
     
-    //METODOS:SON ACCIONES O INTERACCIONES DEL OBJETO.
-    public void disparar(){
-        System.out.println("Te estoy disparando con un daño de"+danio);
+    // Constructor con un parametro
+   
+      public Ak(String tipo, int cargador, int precision, double velocidadCarga, double precio, int danio, double velocidadDisparo)
+    {
+        this.tipo = tipo;
+        this.cargador = cargador;
+        this.precision = precision;
+        this.velocidadCarga = velocidadCarga;
+        this.precio = precio;
+        this.danio = danio;
+        this.velocidadDisparo = velocidadDisparo;
     }
-    public void apuntar(){}
-    public void cargar(){}
+    
+    public Ak(){}  
+    
+    public String disparar()
+    {
+        return "Te estoy disparando con un daño de: " + danio + " puntos"; 
+    }
+    public void apuntar()
+    {
+        
+    }
+    public void recargar()
+    {
+        
+    }
 
+    //Metosos Predifinido por oracle
     @Override
     public String toString() {
         return "Ak{" + "tipo=" + tipo + ", cargador=" + cargador + ", precision=" + precision + ", velocidadCarga=" + velocidadCarga + ", precio=" + precio + ", danio=" + danio + '}';
