@@ -1,61 +1,67 @@
-
 import java.util.Scanner;
 public class MainTarjeta {
     
      public static void main(String args[]){
          
-         //DECLARANDO AL PROGRAMA QUE USARE UN OBJETO DE TIPO TARJETA 
+        Scanner leer = new Scanner(System.in);
+        //declarando al programa que usare un objeto de tipo Tarjetas
         Tarjeta tarjeta;
-        Scanner scan = new Scanner(System.in);
-        int noCuenta, NIP,opcion;
-    
-        
-        System.out.print("Número de cuenta: ");
-        noCuenta = scan.nextInt();
-        
-        System.out.print("NIP: ");
-        NIP = scan.nextInt();
-        
-        //AL MISMO TIEMPO QUE ESTOY INSTANCIANDO LLAMO AL METODO verificarCuenta 
+
+        int noCuenta, NIP;
+        System.out.println("Numero de cuenta:");
+        noCuenta = leer.nextInt();
+        System.out.println("Ingresa tu NIP");
+        NIP = leer.nextInt();
+        //al mismo tiempo que estoy instanciando llamo el metodo verificarCuenta
         tarjeta = new Tarjeta().verificarCuenta(noCuenta, NIP);
-        System.out.println("Bienvenido\n" + tarjeta.nombre);
-        System.out.println("Informacion de la cuenta\n"+tarjeta.toString());
+       
+        System.out.println("BIENVENIDO \n" + tarjeta.nombre);
         
-         //MENU
-       do{
-            System.out.println("¿Que desea realizar?");
-            System.out.println("1-Hacer un deposito\n");
-            System.out.println("2-Hacer un retiro\n");
-            System.out.println("3-Eliminar apartado\n");
-            System.out.println("4-Imprimir datos de la cuenta \n");
-            System.out.println("5-Salir");
-            System.out.println("Opcion:");
-            opcion=scan.nextInt();
-        
-        switch(opcion){
-                case 1 : 
-                    System.out.println("Monto a depositar: ");
-                    tarjeta.Deposito(scan.nextDouble());
-                    break;
-
-                case 2:
-                    System.out.println("Monto a retirar : ");
-                    tarjeta.Retiro(scan.nextDouble());
-                    break;
-
-                 case 3 : 
-                    tarjeta.EliminarApartado();
-                    System.out.println("Apartado eliminado");
-                    break;   
-
-                 case 4 :
-                     System.out.println(tarjeta.toString());
-                     break;
+        int opc;
+        do {
+            System.out.println("1.Hacer un deposito");
+            System.out.println("2.Hacer un retiro");
+            if(tarjeta.montoApartado>0){
+                System.out.println("3.Eliminar apartado");
+            }else{
+                System.out.println("3.Crear apartado");
             }
-        }while(opcion!=5);
-            System.out.println ("¡Hasta luego!");
-        }  
-}               
+            System.out.println("4.Imprimir datos de la cuenta");
+            System.out.println("5.Salir");
+            System.out.println("Elige una opcion:");
+            opc = leer.nextInt();
+            
+            switch (opc) {
+                case 1:
+                    System.out.println("Introduzca la cantidad a depositar:");
+                    double deposito = leer.nextDouble();
+                    tarjeta.deposito(deposito);
+                   
+                    break;
+                case 2:
+                    System.out.println("Introduzca la cantidad a retirar:");
+                    double retiro = leer.nextDouble();
+                    tarjeta.verificarRetiro(retiro);
+                    break;
+                case 3:
+                    if(tarjeta.montoApartado!=0){
+                        tarjeta.apartado();
+                        System.out.println("Apartado eliminado\n");
+                    }else{
+                        System.out.println("Introduzca la cantidad de apartado: \n");
+                        double apartado = leer.nextDouble();
+                        tarjeta.verificarApartado(apartado);
+                    }
+                    break;
+                case 4:
+                    System.out.println(tarjeta.toString());
+                    System.out.println("\n");
+                    break;
+            }
+        } while (opc != 5);
+        System.out.println("¡Hasta luego!");
+    }
+}
        
      
         
