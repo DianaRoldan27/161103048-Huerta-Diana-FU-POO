@@ -26,10 +26,7 @@ public class Tarjeta {
         this.montoApartado = montoApartado;
     }
 
-    //1 public no le haremos caso
-    //2 que tipo se va a regresar en este caso(Tarjetas)
-    //3 Es el nombre
-    //4 los valores que recibe el metodo
+    
     public Tarjeta verificarCuenta(int noCuenta, int NIP) {
         if (noCuenta == 123123 && NIP == 1133) {
 
@@ -86,12 +83,12 @@ public class Tarjeta {
         this.montoDisponible=this.montoDisponible-this.montoApartado;
     }
     
-     //metodo para hacer el total
+    
     public double total() {
         return this.montoDisponible + this.montoApartado;
     }
 
-    //metodo para mostrar los datos de la cuenta
+    
     @Override
     public String toString() {
         return "\n No.Cuenta:" + noCuenta + " \n NIP:" + NIP+ "\n CV:" + cv + "\n Nombre: " + nombre + "\n Fecha Vencimiento: " + dia + "/" + mes + "/" + anio + "\n montoDisponible:" + this.montoDisponible + "\n montoApartado: " + montoApartado + "\n Total:" + this.total();
