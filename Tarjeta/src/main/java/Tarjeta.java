@@ -32,9 +32,9 @@ public class Tarjeta {
 
             return new Tarjeta(123123, 1133, 543, "Eduardo Diaz Flores", 31, 12, 2032, 45987.22, 550);
 
-        } else if (noCuenta == 456789 && NIP == 3367) {
+        } else if (noCuenta == 456789 && NIP == 3377) {
 
-            return new Tarjeta(456789, 3367, 544, "Kevin Mesa Gonzalez", 31, 12, 2032, 360, 5322.23);
+            return new Tarjeta(456789, 3377, 544, "Kevin Mesa Gonzalez", 31, 12, 2032, 360, 5322.23);
 
         } else {
             return new Tarjeta();
@@ -42,7 +42,7 @@ public class Tarjeta {
     }
    
     //metodo para un deposito
-    public void deposito(double deposito) {
+    public void deposito(double deposito){
         this.montoDisponible = this.montoDisponible+deposito;
     }   
     
@@ -82,8 +82,14 @@ public class Tarjeta {
         this.montoApartado=this.montoApartado+apartado;
         this.montoDisponible=this.montoDisponible-this.montoApartado;
     }
-    
-    
+    // metodo para verificar numero de tarjeta
+    public void verificarTarjeta(double noTarjeta){
+       if (noTarjeta == this.noCuenta){
+            System.out.println("El cliente no existe \n");
+        }else{
+            System.out.println("El cliente si existe \n");
+        }
+    }
     public double total() {
         return this.montoDisponible + this.montoApartado;
     }

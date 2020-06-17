@@ -4,7 +4,7 @@ public class MainTarjeta {
      public static void main(String args[]){
          
         Scanner leer = new Scanner(System.in);
-        //declarando al programa que usare un objeto de tipo Tarjetas
+        //Declarando al programa que usare un objeto de tipo Tarjetas
         Tarjeta tarjeta;
 
         int noCuenta, NIP;
@@ -12,7 +12,7 @@ public class MainTarjeta {
         noCuenta = leer.nextInt();
         System.out.println("Ingresa tu NIP");
         NIP = leer.nextInt();
-        //al mismo tiempo que estoy instanciando llamo el metodo verificarCuenta
+        
         tarjeta = new Tarjeta().verificarCuenta(noCuenta, NIP);
        
         System.out.println("BIENVENIDO \n" + tarjeta.nombre);
@@ -26,8 +26,9 @@ public class MainTarjeta {
             }else{
                 System.out.println("3.Crear apartado");
             }
-            System.out.println("4.Imprimir datos de la cuenta");
-            System.out.println("5.Salir");
+            System.out.println("4.Pagar tarjeta");
+            System.out.println("5.Imprimir datos de la cuenta");
+            System.out.println("6.Salir");
             System.out.println("Elige una opcion:");
             opc = leer.nextInt();
             
@@ -52,13 +53,18 @@ public class MainTarjeta {
                         double apartado = leer.nextDouble();
                         tarjeta.verificarApartado(apartado);
                     }
-                    break;
+                    break;       
                 case 4:
+                    System.out.println("Introduzca el numero de tarjeta");
+                    double noTarjeta = leer.nextDouble();
+                    tarjeta.verificarTarjeta(noTarjeta);
+                    break;
+                case 5:
                     System.out.println(tarjeta.toString());
                     System.out.println("\n");
                     break;
             }
-        } while (opc != 5);
+        } while (opc !=6);
         System.out.println("¡Hasta luego!");
     }
 }

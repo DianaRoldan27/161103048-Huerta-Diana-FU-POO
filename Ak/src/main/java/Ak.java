@@ -10,7 +10,7 @@ public class Ak {
     double precio;
     int danio;
     double velocidadDisparo;
-    
+     
     // Constructor con un parametro
    
       public Ak(String tipo, int cargador, int precision, double velocidadCarga, double precio, int danio, double velocidadDisparo)
@@ -25,11 +25,7 @@ public class Ak {
     }
     
     public Ak(){}  
-    
-    public String disparar()
-    {
-        return "Te estoy disparando con un daño de: " + danio + " puntos"; 
-    }
+    /*
     public void apuntar()
     {
         
@@ -38,16 +34,12 @@ public class Ak {
     {
         
     }
-
+    */
+    
     //Metosos Predifinido por oracle
     @Override
     public String toString() {
-        return "Ak{" + "tipo=" + tipo + ", cargador=" + cargador + ", precision=" + precision + ", velocidadCarga=" + velocidadCarga + ", precio=" + precio + ", danio=" + danio + '}';
+        return "Ak{" + "tipo=" + tipo + ", cargador=" + cargador + ", precision=" + precision + ", velocidadCarga=" + velocidadCarga + ", precio=" + precio + ", danio=" + danio + ", velocidadDisparo=" + velocidadDisparo + '}';
     }
-    
-    
-    
-    
-    
 }
 
